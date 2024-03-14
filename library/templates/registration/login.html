@@ -18,13 +18,29 @@
 
 {% if next %}
 
-    {% if user.authenticated %}
+    {% if user.is_authenticated %}
 
         <p>Permission Denied</p>
 
     {% else %}
-        <p>Please Login</p>
+        <p>Please Login first</p>
 
     {% endif %}
 
 {% endif %}
+
+
+<form action = "{% url "login" %}" method="POST">
+
+    {% csrf_token %}
+
+    {{form.username.label_tag}}
+    {{form.username}}
+    
+    {{form.passowrd.label_tag}}
+    {{form.password}}
+
+    <input type='submit' value="Login">
+    <input type='hidden' name='next' value="{{next}}">
+
+</form>

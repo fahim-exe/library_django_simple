@@ -29,6 +29,16 @@
         Books Available : {{num_instances_available}}        
     </p>
 
+    {% if user.is_authenticated %}
+    
+      <p>You are logged in</p>
+      <p>Welcome, {{user.get_username}}</p>
+
+    {% else %}
+      <p>You are not logged in</p>
+
+    {% endif %}
+
 
 
     <!--
