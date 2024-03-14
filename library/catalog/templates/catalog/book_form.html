@@ -1,34 +1,23 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Simple Library</title>
+    <title>Create New Book</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
 
-    <h1>Home Page</h1>
+    <h1>Create New Book </h1>
 
-    <!--
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Create Book">
 
-      <p>
-        Create book click here <a href="catalog/create_book">HERE</a>
-      </p>
-
-    -->
-
-    
-
-    <p>
-        Total Books : {{num_books}}        
-    </p>
-
-    <p>
-        Books Available : {{num_instances_available}}        
-    </p>
-
+    </form>
 
 
     <!--
@@ -39,3 +28,7 @@
 
   </body>
 </html>
+
+
+
+
