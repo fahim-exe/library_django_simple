@@ -1,0 +1,30 @@
+<!--
+    1. check for errors
+    2. user is authenticated 
+        if not login
+
+        give login form
+
+    situation >> user logs in but gets no access or not logged in
+
+-->
+
+{% if form.errors %}
+
+    <p>Username or Password was incorrect.</p>
+
+{% endif %}
+
+
+{% if next %}
+
+    {% if user.authenticated %}
+
+        <p>Permission Denied</p>
+
+    {% else %}
+        <p>Please Login</p>
+
+    {% endif %}
+
+{% endif %}

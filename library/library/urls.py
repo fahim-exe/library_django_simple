@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalog/', include('catalog.urls')),
     path('', RedirectView.as_view(url='catalog/')), #redirecting the homepage to catalog page
+    path('accounts/', include('django.contrib.auth.urls'))
 
 ]
